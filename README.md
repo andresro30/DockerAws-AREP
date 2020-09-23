@@ -40,10 +40,10 @@ mvn package
 
 ## Visualiación del programa
 Página inicial de la aplicación:
-![]()
+![](https://github.com/andresro30/DockerAws-AREP/blob/master/img/cliente.PNG)
 
 Resultado al realizar una consulta a la base de datos
-![]()
+![](https://github.com/andresro30/DockerAws-AREP/blob/master/img/find.PNG)
 
 
 ## Ejecución de pruebas
