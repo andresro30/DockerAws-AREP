@@ -3,15 +3,26 @@ package edu.escuelaing.arep.client;
 import static spark.Spark.*;
 
 
+/**
+ * Propiedades de la clase Client
+ */
 public class Client {
 
+    /**
+     * Método principal de la clase
+     * @param args de tipo String[]
+     */
     public static void main(String[] args){
         port(getPort());
         get("/", (req,res) -> pagina());
-        get("/add",(req,res) -> "Vamos a agregar");
+        get("/add",(req,res) -> new RoundRobbin().find());
         get("/result",(req,res) -> getDatos());
     }
 
+    /**
+     * Método que carga la página principal de la aplicación
+     * @return variable de tipo String
+     */
     private static String pagina() {
         String outputLine = "<DOCTYPE html"
                 + "<html>"
@@ -39,6 +50,10 @@ public class Client {
         return outputLine;
     }
 
+    /**
+     * Método que carga la página de respuesta a una consulta
+     * @return de tipo String
+     */
     private static String getDatos() {
         String outputLine = "<DOCTYPE html"
                 + "<html>"
@@ -52,6 +67,10 @@ public class Client {
         return outputLine;
     }
 
+    /**
+     * Método que especifica el puerto de la clase
+     * @return variable de tipo int con el valor del puerto
+     */
     private static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));

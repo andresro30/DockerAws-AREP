@@ -12,14 +12,17 @@ import org.json.JSONObject;
 import java.util.Iterator;
 
 
+/**
+ * Propiedades de la case DBConecction
+ */
 public class DBConecction {
 
-    private final static String host = "ec2-18-205-23-96.compute-1.amazonaws.com";
+    private final static String host = "ec2-54-197-36-72.compute-1.amazonaws.com";
 
-    public static void main(String[] args) {
-//        get
-    }
-
+    /**
+     * Método encargado de consultar los últimos 10 registros de la base de datos
+     * @return de tipo JSONObject
+     */
     public JSONObject select() {
         JSONObject respuesta = new JSONObject();
         try{
@@ -55,6 +58,11 @@ public class DBConecction {
         return respuesta;
     }
 
+    /**
+     * Método encargado de insertar un nuevo dato a la base ed datos
+     * @param dato de tipo String que contiene el nuevo valor a agregar
+     * @return JSSONObject
+     */
     public JSONObject insert(String dato) {
         JSONObject respuesta = new JSONObject();
         try {
